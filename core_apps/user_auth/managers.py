@@ -30,7 +30,7 @@ def generate_username() -> str:
     # Get initials from school name
     prefix = "".join([word[0] for word in words]).upper()
     # Calculate remaining length for random characters
-    remaining_length = 15 - len(prefix) - 1
+    remaining_length = 16 - len(prefix) - 1
     # Generate random alphanumeric string
     random_chars = "".join(choices(string.ascii_uppercase + string.digits, k=remaining_length))
     username = f"{prefix}--{random_chars}"

@@ -65,9 +65,9 @@ class User(AbstractUser):
     )
     username = models.CharField(
         _("username"),
-        max_length=12,
+        max_length=20,
         unique=True,
-        help_text=_("Required. 12 characters or fewer for school ID")
+        help_text=_("Required. 20 characters or fewer for school ID")
     )
     email = models.EmailField(
         _("email address"),
