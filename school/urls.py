@@ -17,6 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularSwaggerView,
@@ -31,6 +32,10 @@ urlpatterns = [
     path("api/v1/schema/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
     
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+#static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + \
 
 admin.site.site_header = "Outshine School Admin"
 admin.site.site_title = "Outshine School Admin Portal"

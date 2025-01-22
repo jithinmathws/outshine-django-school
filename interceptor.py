@@ -1,7 +1,7 @@
 from loguru import logger
-from logging
+from logging import Handler
 
-class InterceptHandler(logging.Handler):
+class InterceptHandler(Handler):
     def emit(self, record):
         try:
             level = logger.level(record.levelname).name
