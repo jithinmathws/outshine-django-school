@@ -2,7 +2,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from os import getenv, path
 from loguru import logger
-from datetime import timedelta
+from datetime import timedelta, date
 import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -143,13 +143,19 @@ SITE_ID = 1
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR / "staticfiles")
-STATICFILES_DIRS = [str(APPS_DIR / "static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "user_auth.User"
+
+DEFAULT_BIRTH_DATE = date(2005, 1, 1)
+DEFAULT_DATE = date(2000, 1, 1)
+DEFAULT_EXPIRY_DATE = date(2025, 1, 1)
+DEFAULT_COUNTRY = "IN"
+DEFAULT_PHONE_NUMBER = "+91 0000000000"
+
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }

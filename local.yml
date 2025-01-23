@@ -5,7 +5,7 @@ services:
       dockerfile: ./docker/local/django/Dockerfile
     volumes:
       - .:/app:z
-      - ./staticfiles:/app/staticfiles
+      - ./staticfiles:/outshine-django-school/staticfiles
     # ports:
     #   - "8000:8000"
     expose:
@@ -102,7 +102,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./staticfiles:/app/staticfiles
+      - ./staticfiles:/outshine-django-school/staticfiles
       - logs_store:/var/log/nginx
     depends_on:
       - api
